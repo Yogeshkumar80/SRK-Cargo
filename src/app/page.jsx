@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Marquee } from "@/components/ui/marquee";
+import { HyperText } from "@/components/ui/hyper-text";
 
 export default function Home() {
   return (
@@ -118,7 +119,7 @@ export default function Home() {
                 className="flex flex-col border-l-4 border-primary pl-6"
               >
                 <span className="text-4xl font-black text-white leading-none">
-                  {stat.value}
+                  <HyperText>{stat.value}</HyperText>
                 </span>
                 <span className="text-xs uppercase tracking-widest text-slate-500 font-bold mt-2">
                   {stat.label}
