@@ -1,93 +1,116 @@
-'use client'
+"use client";
 
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Verified, Clock } from "lucide-react";
-import Link  from "next/link";
+import Image from "next/image";
+import Link from "next/link";
 import TruckScene from "@/components/TruckScene";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { Marquee } from "@/components/ui/marquee";
 
 export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden industrial-grid">
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent z-10"></div>
 
-  {/* Background Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent z-10"></div>
-
-  {/* Right Side Image */}
-  {/* <div className="absolute right-0 top-0 w-1/2 h-full">
-    <div 
-      className="w-full h-full bg-cover bg-center opacity-40 lg:opacity-100"
-      style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8xwCaUO6fR3QjV6MngOqisMUqEXghiQopvAvRyvCqpBzGPEYUCYLIkKo0oyfYkVyvFxn3figHQJtgqWX1jT_ZWjIbr60reQTYf95zHdfJzc8aTAM4CmiZaP-ge9PFV6sgmFuRl2cOHK2W5Dsya2aHq-hYIHml_4PlHv4Dx8lqj589M1f3_cbkBzIGeI0FFhaNvLv6W_h6vMs2h9ltQ2PCnKn-oQb81k14DtI3OMjEpKmuhsWM8rvk16zDt_1AELVDpWmHyuSTmYk')" }}
-    />
-  </div> */}
-
-  <div className="absolute right-0 top-0 w-full h-full">
-  <TruckScene />
-</div>
-
-  {/* Content Container */}
-  <div className="relative z-20 w-full max-w-7xl mx-auto px-6 py-20 flex">
-
-    {/* LEFT SIDE TEXT */}
-    <div className="w-full  text-left">
-      
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-3 py-1 mb-6">
-          <span className="w-2 h-2 bg-primary animate-pulse"></span>
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
-            Est. 1978 • Industry Leaders
-          </span>
-        </div>
-
-        <h2 className="text-6xl md:text-8xl font-black uppercase leading-[0.9] tracking-tighter mb-8">
-          45 Years of <span className="text-primary italic">Strength.</span><br/>
-          Future-Ready Execution.
-        </h2>
-
-        <p className="text-lg text-slate-400 mb-10 leading-relaxed max-w-lg font-medium">
-          The backbone of major infrastructure. Providing elite heavy logistics,
-          excavation, and road construction with half a century of proven reliability.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <button className="bg-primary text-background-dark text-lg font-black uppercase px-10 py-5 rounded-sm hover:scale-[1.02] transition-transform">
-            Request Quote
-          </button>
-
-          <Link
-            href="/about"
-            className="bg-surface-dark border border-border-dark text-white text-lg font-black uppercase px-10 py-5 rounded-sm hover:bg-border-dark transition-colors text-center"
+        <div className="absolute inset-0 w-full h-full">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
           >
-            Our Story
-          </Link>
+            <source src="/bgvideo.mp4" type="video/mp4" />
+          </video>
         </div>
 
-      </motion.div>
-    </div>
+        {/* Content Container */}
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 py-20 flex">
+          {/* LEFT SIDE TEXT */}
+          <div className="w-full  text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-3 py-1 mb-6">
+                <span className="w-2 h-2 bg-primary animate-pulse"></span>
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+                  Est. 2012 • Industry Leaders
+                </span>
+              </div>
 
-  </div>
+              <h2 className="text-6xl md:text-5xl font-black uppercase leading-[0.9] tracking-tighter mb-8">
+                14 Years of{" "}
+                <span className="text-primary italic">Strength.</span>
+                <br />
+                Future-Ready Execution.
+              </h2>
 
-  <div className="absolute bottom-0 left-0 w-full h-2 bg-primary"></div>
+              <p className="text-sm text-slate-400 mb-10 leading-relaxed font-medium">
+                The backbone of major infrastructure. Providing elite heavy
+                logistics, excavation, and road construction with half a century
+                of proven reliability.
+              </p>
 
-</section>
+              <div className="flex flex-col justify-center sm:flex-row gap-4">
+                <InteractiveHoverButton
+                  className="
+                        !bg-background-dark
+                        !text-white
+                        border-primary
+                        text-sm
+                        font-black
+                        uppercase
+                        tracking-widest
+                        transition-all
+                        duration-300
+                        [&_*]:hover:!text-black
+                      "
+                >
+                  REQUEST QUOTE
+                </InteractiveHoverButton>
 
+                <Link href="/about">
+                  <InteractiveHoverButton
+                    className="
+                        !bg-background-dark
+                        !text-white
+                        border-primary
+                        px-7 py-3
+                        text-sm
+                        font-black
+                        uppercase
+                        tracking-widest
+                        transition-all
+                        duration-300
+                        [&_*]:hover:!text-black
+                      "
+                  >
+                    Our Story
+                  </InteractiveHoverButton>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
 
+        <div className="absolute bottom-0 left-0 w-full h-2 bg-primary"></div>
+      </section>
       {/* Stats Strip */}
       <section className="bg-surface-dark border-b border-border-dark py-12">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { label: "Years Experience", value: "45+" },
-              { label: "Projects Finished", value: "2,500+" },
-              { label: "Machines Owned", value: "150+" },
-              { label: "Global Clients", value: "850+" },
+              { label: "Years of Industrial Experience", value: "14+" },
+              { label: "Projects Finished", value: "7+" },
+              { label: "Dedicated Professionals", value: "650+" },
             ].map((stat, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -95,44 +118,179 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="flex flex-col border-l-4 border-primary pl-6"
               >
-                <span className="text-4xl font-black text-white leading-none">{stat.value}</span>
-                <span className="text-xs uppercase tracking-widest text-slate-500 font-bold mt-2">{stat.label}</span>
+                <span className="text-4xl font-black text-white leading-none">
+                  {stat.value}
+                </span>
+                <span className="text-xs uppercase tracking-widest text-slate-500 font-bold mt-2">
+                  {stat.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Services Section */}
+      <section className="py-24 bg-background-dark">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <h3 className="text-primary font-bold uppercase tracking-[0.3em] mb-4">
+                Core Capabilities
+              </h3>
+              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
+                Industrial Solutions
+              </h2>
+            </div>
+            <p className="max-w-md text-slate-500 font-medium leading-relaxed">
+              We offer a comprehensive range of services tailored to meet your
+              infrastructure needs — from planning and execution to logistics
+              and heavy equipment support — ensuring quality, precision, and
+              performance at every stage.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+            {[
+              {
+                title: "Infrastructure Development",
+                desc: "Design and construction of world-class infrastructure projects",
+              },
+              {
+                title: "Project Management",
+                desc: "End-to-end project oversight and execution",
+              },
+              {
+                title: "Quality Assurance",
+                desc: "Stringent quality control measures",
+              },
+              {
+                title: "Technical Consultancy",
+                desc: "Expert advice and technical support",
+              },
+              {
+                title: "Sustainability Solutions",
+                desc: "Environmentally conscious development",
+              },
+              {
+                title: "Maintenance Services",
+                desc: "Long-term maintenance and support",
+              },
+            ].map((service, i) => (
+              <div
+                key={i}
+                className="group bg-surface-dark p-10 border border-border-dark relative overflow-hidden transition-all hover:bg-zinc-900"
+              >
+                <h4 className="text-xl font-bold uppercase mb-4">
+                  {service.title}
+                </h4>
+                <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                  {service.desc}
+                </p>
+                <Link
+                  href="/services"
+                  className="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2"
+                >
+                  View More
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="bg-surface-dark border-b border-border-dark py-16">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          {/* Section Header */}
+          <div className="mb-12 text-center">
+            <h3 className="text-2xl md:text-3xl font-black uppercase text-white">
+              Our Financial Partners
+            </h3>
+
+            <p className="text-slate-500 text-sm mt-3 max-w-xl mx-auto">
+              Trusted banking and financial institutions supporting our
+              large-scale infrastructure and logistics operations.
+            </p>
+          </div>
+
+          {/* Partners Grid */}
+          <div className="flex justify-between items-center">
+            {[
+              {
+                name: "HDFC Bank",
+                logo: "/partners/hdfc.jpg",
+                desc: "India's largest private sector bank",
+              },
+              {
+                name: "Axis Bank",
+                logo: "/partners/axis.jpg",
+                desc: "India's third largest private sector bank",
+              },
+              {
+                name: "ICICI Bank",
+                logo: "/partners/icici.jpg",
+                desc: "India's second largest private sector bank",
+              },
+            ].map((partner, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group p-6 flex flex-col items-center justify-center hover:border-primary transition-all duration-300"
+              >
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={140}
+                  height={60}
+                  className="object-contain"
+                />
+                <div className="uppercase text-lg font-bold mt-6">
+                  {partner.name}
+                </div>
+                <div className=" text-sm mt-1">{partner.desc}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-24 bg-background-dark">
+      <section className="bg-dark border-b border-border-dark py-16 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div>
-              <h3 className="text-primary font-bold uppercase tracking-[0.3em] mb-4">Core Capabilities</h3>
-              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">Industrial Solutions</h2>
-            </div>
-            <p className="max-w-md text-slate-500 font-medium leading-relaxed">
-              From large-scale excavation to precision heavy logistics, we deploy specialized equipment and expert operators for mission-critical infrastructure.
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-black uppercase text-white">
+              Trusted By
+            </h3>
+            <p className="text-slate-500 text-sm mt-3 max-w-xl mx-auto">
+              Proudly partnered with leading infrastructure organizations.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+
+          {/* Marquee */}
+          <Marquee pauseOnHover className="[--duration:40s]">
             {[
-              { title: "Trucks & Trailers", icon: "local_shipping", desc: "High-tonnage hauling solutions for heavy machinery and structural materials across any terrain." },
-              { title: "JCB Machines", icon: "precision_manufacturing", desc: "Versatile earthmoving and excavation units maintained to the highest safety and performance standards." },
-              { title: "Sand Excavation", icon: "layers", desc: "Large-scale material sourcing and logistics for reclamation and major construction site filling." },
-              { title: "Road Construction", icon: "road", desc: "End-to-end infrastructure development including grading, surfacing, and site preparation." },
-              { title: "Demolition", icon: "home_repair_service", desc: "Strategic structural removal with high safety protocols for commercial and industrial zones." },
-              { title: "Heavy Logistics", icon: "package_2", desc: "Comprehensive machinery transport management including oversized loads and international logistics." },
-            ].map((service, i) => (
-              <div key={i} className="group bg-surface-dark p-10 border border-border-dark relative overflow-hidden transition-all hover:bg-zinc-900">
-                <h4 className="text-xl font-bold uppercase mb-4">{service.title}</h4>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">{service.desc}</p>
-                <Link href="/services" className="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2">
-                  View Specs <ArrowRight className="w-4 h-4" />
-                </Link>
+              { name: "NHAI", logo: "/clients/nhai.jfif" },
+              { name: "NHIDCL", logo: "/clients/nhidcl.jfif" },
+              { name: "MSV", logo: "/clients/msv.jfif" },
+              { name: "Bharatmala", logo: "/clients/bharatmala.jfif" },
+            ].map((client, i) => (
+              <div
+                key={i}
+                className="mx-12 flex flex-col items-center justify-center group"
+              >
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={140}
+                  height={80}
+                />
+                <div className="uppercase text-lg font-bold mt-5">
+                  {client.name}
+                </div>
               </div>
             ))}
-          </div>
+          </Marquee>
         </div>
       </section>
 
@@ -141,23 +299,44 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <h3 className="text-primary font-bold uppercase tracking-[0.3em] mb-4">Precision Engineered</h3>
+              <h3 className="text-primary font-bold uppercase tracking-[0.3em] mb-4">
+                Building Excellence
+              </h3>
               <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tighter mb-10 leading-[1.1]">
-                The Unfair Advantage In <span className="italic text-slate-700">Infrastructure</span>
+                Discover Our Journey of{" "}
+                <span className="italic text-slate-700">
+                  Innovation and Growth
+                </span>
               </h2>
               <div className="space-y-8">
                 {[
-                  { title: "Zero-Accident Protocol", icon: Shield, desc: "Our safety standards exceed OSHA requirements, ensuring projects proceed without costly mechanical or human downtime." },
-                  { title: "Certified Yard Ops", icon: Verified, desc: "Every piece of equipment undergoes a 50-point inspection before dispatch to ensure 99.9% uptime." },
-                  { title: "Rapid Response Logistics", icon: Clock, desc: "24/7 deployment capabilities. When the site stops, you lose money. We ensure it never stops." },
+                  {
+                    title: "Innovation",
+                    icon: Shield,
+                    desc: "We embrace new technologies and creative solutions to continuously improve our processes and deliver exceptional results.",
+                  },
+                  {
+                    title: "Our Vision",
+                    icon: Verified,
+                    desc: "To be the leading infrastructure development company in India, known for excellence, innovation, and sustainable growth.",
+                  },
+                  {
+                    title: "Our Mission",
+                    icon: Clock,
+                    desc: "24/7 deployment capabilities. When the site stops, you lose money. We ensure it never stops.",
+                  },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6">
                     <div className="flex-shrink-0 w-12 h-12 bg-primary flex items-center justify-center rounded-sm">
                       <item.icon className="text-background-dark font-bold w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold uppercase mb-2 tracking-tight">{item.title}</h4>
-                      <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+                      <h4 className="text-lg font-bold uppercase mb-2 tracking-tight">
+                        {item.title}
+                      </h4>
+                      <p className="text-slate-500 text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -166,33 +345,42 @@ export default function Home() {
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-primary/20 rounded-sm"></div>
               <div className="relative bg-surface-dark border border-border-dark p-2">
-                <img 
-                  className="w-full h-auto rounded-sm grayscale hover:grayscale-0 transition-all duration-700" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpasBF5hetjDwrREL_y7TgJmHrUYWGlRWccM_L-teKvF72Yo9C0wovlme8nj5ii4JeUfigF5AD68zZKtjY3NtN8CXnJzgf0soE_9xqVE-8iDfiB-Ku2LG-Whcyj0lZfx1K1vKBfpdls5N4f_9b0OMvtj-0aV49wK1XHtklw0KC70ubWu5VNibz7Cynf4W3lc_u2pou6hbR_Zfzn5kS-Nib4f7IkhthAp-H2cnavg1CqZ5dOKkjF1UKuNzO0c82q96wAMKdjWIrO8I" 
+                <img
+                  className="w-full h-auto rounded-sm grayscale hover:grayscale-0 transition-all duration-700"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpasBF5hetjDwrREL_y7TgJmHrUYWGlRWccM_L-teKvF72Yo9C0wovlme8nj5ii4JeUfigF5AD68zZKtjY3NtN8CXnJzgf0soE_9xqVE-8iDfiB-Ku2LG-Whcyj0lZfx1K1vKBfpdls5N4f_9b0OMvtj-0aV49wK1XHtklw0KC70ubWu5VNibz7Cynf4W3lc_u2pou6hbR_Zfzn5kS-Nib4f7IkhthAp-H2cnavg1CqZ5dOKkjF1UKuNzO0c82q96wAMKdjWIrO8I"
                   alt="Operator hands on controls"
                 />
                 <div className="absolute bottom-10 right-10 bg-primary p-8 rounded-sm shadow-2xl">
-                  <span className="block text-4xl font-black text-background-dark leading-none">4.9/5</span>
-                  <span className="block text-xs uppercase font-black text-background-dark tracking-tighter mt-1">Client Satisfaction</span>
+                  <span className="block text-4xl font-black text-background-dark leading-none">
+                    4.9/5
+                  </span>
+                  <span className="block text-xs uppercase font-black text-background-dark tracking-tighter mt-1">
+                    Client Satisfaction
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="bg-primary py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-background-dark text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-none">
-            Ready to move the <span className="bg-background-dark text-primary px-2">Unmovable?</span>
+            Ready to move the{" "}
+            <span className="bg-background-dark text-primary px-2">
+              Unmovable?
+            </span>
           </h2>
           <p className="text-background-dark/80 text-lg md:text-xl font-bold uppercase mb-10 max-w-2xl mx-auto">
-            Partner with Industrial Experts. Join hundreds of global firms that trust us for their most critical operations.
+            Partner with Industrial Experts. Join the group of clients that
+            trust us for their most critical operations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={() => window.dispatchEvent(new CustomEvent('open-quote-modal'))}
+            <button
+              onClick={() =>
+                window.dispatchEvent(new CustomEvent("open-quote-modal"))
+              }
               className="bg-background-dark text-white px-10 py-5 font-black uppercase tracking-[0.2em] rounded hover:scale-105 transition-transform flex items-center justify-center gap-3"
             >
               Partner With Us

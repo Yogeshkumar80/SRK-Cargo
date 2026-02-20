@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Construction, PhoneCall, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
 import QuoteModal from "./QuoteModal";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -57,21 +59,18 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="bg-primary p-2 rounded-sm">
-              <Construction className="text-background-dark font-bold w-6 h-6" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold tracking-tighter leading-none text-white">
-                INDUSTRIAL<span className="text-primary">CORE</span>
-              </h1>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-primary font-bold">
-                Transport & Logistics
-              </p>
-            </div>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/logo.png"
+              alt="Industrial Core Logo"
+              width={180}
+              height={60}
+              className="h-12 w-auto object-contain transition-all duration-300 group-hover:opacity-80"
+              priority
+            />
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
@@ -89,17 +88,33 @@ export default function Navbar() {
 
           {/* Right Section */}
           <div className="flex items-center gap-4">
-            <button className="hidden sm:flex items-center gap-2 text-sm font-bold uppercase border border-border-dark px-5 py-2.5 rounded-sm hover:bg-surface-dark transition-all text-white">
+            {/* Call Now */}
+            <button className="hidden sm:flex items-center gap-2 text-sm font-bold uppercase border border-border-dark px-5 py-2.5 rounded-sm transition-all duration-300 text-white hover:bg-primary hover:text-black">
               <PhoneCall className="w-4 h-4" />
               Call Now
             </button>
 
-            <button
+            {/* Request Quote */}
+            <InteractiveHoverButton
               onClick={() => setIsQuoteModalOpen(true)}
-              className="bg-primary text-background-dark text-sm font-bold uppercase px-6 py-2.5 rounded-sm hover:brightness-110 transition-all shadow-[4px_4px_0px_0px_rgba(245,184,0,0.2)]"
+              className="
+                !bg-primary
+                !text-black
+                border
+                border-border-dark
+                text-sm
+                font-black
+                rounded-sm
+                uppercase
+                tracking-widest
+                transition-all
+                duration-300
+                [&_*]:hover:!bg-background-dark
+                hover:!text-black
+              "
             >
-              Request Quote
-            </button>
+              REQUEST QUOTE
+            </InteractiveHoverButton>
 
             {/* Mobile Toggle */}
             <button
@@ -128,7 +143,7 @@ export default function Navbar() {
               </Link>
             ))}
 
-            <button className="flex items-center justify-center gap-2 text-sm font-bold uppercase border border-border-dark px-5 py-4 rounded-sm hover:bg-surface-dark transition-all text-white">
+            <button className="flex items-center justify-center gap-2 text-sm font-bold uppercase border border-border-dark px-5 py-4 rounded-sm text-white hover:bg-surface-dark transition-all">
               <PhoneCall className="w-4 h-4" />
               Call Now
             </button>
