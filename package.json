@@ -9,6 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@heroui/card": "^2.2.27",
+    "@heroui/react": "^2.8.9",
+    "@heroui/system": "^2.4.27",
+    "@heroui/theme": "^2.4.26",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
     "class-variance-authority": "^0.7.1",

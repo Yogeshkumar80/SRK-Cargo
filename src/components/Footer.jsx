@@ -1,12 +1,6 @@
-import {
-  Construction,
-  Share2,
-  Globe,
-  Rss,
-  MapPin,
-  Mail,
-  Headset,
-} from "lucide-react";
+import { Share2, Globe, Rss, MapPin, Mail, Headset } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -14,16 +8,21 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
         <div className="col-span-1">
           <div className="flex items-center gap-3 text-white mb-6">
-            <div className="bg-primary p-1.5 rounded-sm">
-              <Construction className="text-background-dark font-bold w-5 h-5" />
-            </div>
-            <h1 className="text-lg font-bold tracking-tighter leading-none">
-              INDUSTRIALCORE
-            </h1>
+            <Link href="/" className="flex items-center group">
+              <Image
+                src="/logo.png"
+                alt="Industrial Core Logo"
+                width={180}
+                height={60}
+                className="h-12 w-auto object-contain transition-all duration-300 group-hover:opacity-80"
+                priority
+              />
+            </Link>
           </div>
           <p className="text-sm leading-relaxed mb-6">
-            The definitive standard for heavy equipment and logistical execution
-            since 1978. Building the world's most resilient infrastructure.
+            The backbone of major infrastructure. Providing elite heavy
+            logistics, excavation, and road construction with half a century of
+            proven reliability.
           </p>
           <div className="flex gap-4">
             <a
@@ -49,12 +48,12 @@ export default function Footer() {
 
         <div>
           <h5 className="text-white font-black uppercase tracking-widest text-sm mb-6 border-l-2 border-primary pl-4">
-            Yard Services
+            Services
           </h5>
           <ul className="space-y-4 text-sm font-medium">
             <li>
               <a href="#" className="hover:text-primary transition-colors">
-                Equipment Sales
+                Infrastructure Development
               </a>
             </li>
             <li>

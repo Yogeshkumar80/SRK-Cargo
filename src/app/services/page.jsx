@@ -10,44 +10,46 @@ import {
   CheckCircle,
   Clock,
 } from "lucide-react";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 
 export default function Services() {
   const services = [
     {
-      title: "Sand Excavation",
-      icon: Layers,
-      desc: "High-efficiency extraction and sourcing for agricultural, industrial, and construction grade sand requirements.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAxPQDbxDm44WGGq9qM539a-oiw2iL04kplRx4NI_lxthjIWoR0QkIFZqv20Lh3F9t21uUtsOCEZhXNnNwZVKOH7baow8K9EEVDwBMDsE641pLQmGssKSrBn_aIWNs175mFrBTucmkt-mCtY7AJk2b1BGTXv3OwCD7ktutdVFusZxY3A0HwCocowS_tW3_jV96cH8GdG8HtauTd3rrtQJOjjb12zI-qwfzl9cvL8bMaC0jHEatGoqzLmI0-oQdEfGHOOgnfDPCW8dk",
-    },
-    {
-      title: "Land Clearing",
-      icon: Settings,
-      desc: "Comprehensive site preparation including vegetation removal, mulching, and debris disposal for large-scale development.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBVUOZ_LnE1kEqsABNEfrB9pGAZGORYx8S2aO3erCVpKzr9HvkU3_ioEg_M2EgnvwUKQh4zl0PW4MvE-GuJkQ9B2Hw-wG-WHk-79JoOemFBmMQs7Ae6lxd5dwIKSgZ1R-asQanL7frreUhoLElSWr_Ble1MlzdVqKHYmOiY8Yj218yo4Tsb44Eu07amfD_sh4X398t3yrOOZwfVwhE6JMzbyvJf4LIO493NLbmT5tZajCWJ06LZlsCr7yTi53zMFE_PGg8FNMmto7w",
-    },
-    {
-      title: "Deep Trenching",
-      icon: Settings,
-      desc: "Precision trenching for deep foundations, underground infrastructure, and heavy-duty utility lines.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB8A9CdMHZ-_IRCUL_Cl2UXWiI6JI0QzX3uPF9AB-uCwy5wL1LFN_1iIB5he9N8a2gQIu2vY0LcAUvD_qt8qog6ec5Yh_l5b_NQA8ZDni1pmk2anztCnom4prfsgsAxR1HWl95UWojggNsNUDQVxsTOM6Yi5kc333URPSiwUbZpDGcGwXXxD8fVTXzz--wrV4fB1mi9kgTVb3Rr7hzPuLHE4DLjGE66g0bHONSNAYdMPSXFqepwgX2V8HbQa2J5BposdaNS6yo8v_E",
-    },
-    {
-      title: "Precision Grading",
+      title: "Infrastructure Development",
       icon: Milestone,
-      desc: "Advanced GPS-guided surface leveling and site preparation for perfect foundations and drainage systems.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCBjrkX0YwkdxqvUMMftr0uCZNrvWJXexQNNWGw_3OCy2ROdqzvy14VBvNk7I3-vLUsxJEDQ3bR284ThLSbmrc1Mbeal8wF25KJauF7xTBqDFbzXZZFO7yybWnjycqG57kmGiA5JR5ZQXmdohWYkFSecnYrYiwjrwe00YRr5T1PFKhGbvfEdTReHGdWZnh1c0InMQhkO7-5zDZQjplrtS5QrMM5eRpil2SHe4kLu1ri2gul1k8JfrcLeKUOeW6sHnix8qZkzVCnydo",
+      desc: "Design and construction of world-class infrastructure projects across transportation, industrial, and civic sectors.",
+      img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
     },
     {
-      title: "Bulk Hauling",
-      icon: Truck,
-      desc: "Efficient logistics for massive volume material transport, debris removal, and resource logistics.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0JOmECNn6dqB5yZu51vrlaCP-APvq4bfLCiMFkpZdjvv9TWMyjgPS-o8IGknX8tFLu2Eg-R1dAtmiF5hyHkXQFiA080RDMBsPLIUSC2DA4trHEC5fB-jvafzNkcggicnVfhZnqwOOo-DhC4ZlgoKXvCgQd5MPS9duHmQVDmRQ1P6FbnvVc4ftl2kgOByslZCQyokBB2EKOM_XSu6geh45--QU9uHhHOISGJq1gmqilgWpxw5PHu1V_Udq_AtaSXgHrqpDis9ULq8",
+      title: "Project Management",
+      icon: Settings,
+      desc: "End-to-end project oversight ensuring timelines, budgets, and execution standards are met with precision.",
+      img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
     },
     {
-      title: "Demolition",
+      title: "Quality Assurance",
+      icon: CheckCircle,
+      desc: "Stringent quality control frameworks guaranteeing structural integrity, safety, and regulatory compliance.",
+      img: "/services/img/qualityAssurance.png",
+    },
+    {
+      title: "Technical Consultancy",
+      icon: Layers,
+      desc: "Expert advisory and technical support delivering optimized engineering solutions for complex projects.",
+      img: "/services/img/technicalConsultancy.png",
+    },
+    {
+      title: "Sustainability Solutions",
       icon: Home,
-      desc: "Safe structural dismantling and site clearing for redevelopment projects and industrial upgrades.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDgcY8k4-N2eyzgM4bTroEc_lfmBKKuUItF1wAGWGcAp4AI7MagT-lR23M2YCggHDzi-kGNL7Ae2pmcGBoXmTiJo2lhAvpuDNNv4Gz1DLIpDDmR_PxnQtOoe8OAkuCj2NN7e79qh38va1AhlM5QJ9fh_8TJr_lxPG0kVCGJKlgCD_BFDWmBVPJFDyGIFjctrrDwf1Nqy0SsenBThEXTMBVfT6qlkS6zNyEwRLWn4cQL2Fog0kYPR1thmElIJGgf-Ugoho4lorrOX-w",
+      desc: "Environmentally responsible development practices focused on long-term sustainability and impact reduction.",
+      img: "/services/img/sustainableSolutions.png",
+    },
+    {
+      title: "Maintenance Services",
+      icon: Clock,
+      desc: "Comprehensive post-completion maintenance and operational support for long-term infrastructure performance.",
+      img: "/services/img/maintainenceServices.png",
     },
   ];
 
@@ -70,18 +72,30 @@ export default function Services() {
               <span className="text-primary">SERVICES</span>
             </h1>
             <p className="text-slate-300 text-lg lg:text-xl font-normal leading-relaxed mb-8 max-w-2xl">
-              Premium heavy equipment solutions engineered for large-scale
-              industrial projects, infrastructure development, and resource
-              extraction.
+              Delivering world-class infrastructure development, project
+              management, quality assurance, and sustainable engineering
+              solutions with precision and long-term reliability.
             </p>
-            <button
+            <InteractiveHoverButton
               onClick={() =>
                 window.dispatchEvent(new CustomEvent("open-quote-modal"))
               }
-              className="bg-primary hover:bg-yellow-500 text-background-dark px-10 py-4 rounded font-display font-black text-lg tracking-wider transition-all uppercase flex items-center gap-3"
+              className="
+                                      !bg-background-dark
+                                      !text-white
+                                      border-primary
+                                      text-lg
+                                      px-8 py-4
+                                      font-black
+                                      uppercase
+                                      tracking-widest
+                                      transition-all
+                                      duration-300
+                                      [&_*]:hover:!text-black
+                                    "
             >
-              Request Quote <ArrowRight className="w-6 h-6" />
-            </button>
+              REQUEST QUOTE
+            </InteractiveHoverButton>
           </div>
         </div>
       </section>
@@ -91,14 +105,14 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { label: "Experience", value: "45+ Years", icon: Settings },
+              { label: "Experience", value: "14+ Years", icon: Settings },
               { label: "No Brokers", value: "Own Fleet", icon: Truck },
               {
                 label: "Expert Operators",
                 value: "Certified",
                 icon: CheckCircle,
               },
-              { label: "Always Available", value: "24/7 Support", icon: Clock },
+              { label: "Always Available", value: "Full Support", icon: Clock },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-5 group">
                 <item.icon className="text-primary w-12 h-12 transition-transform group-hover:scale-110" />

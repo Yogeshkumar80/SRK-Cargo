@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Shield, Verified, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import TruckScene from "@/components/TruckScene";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Marquee } from "@/components/ui/marquee";
 
