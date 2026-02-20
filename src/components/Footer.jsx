@@ -1,4 +1,4 @@
-import { Share2, Globe, Rss, MapPin, Mail, Headset } from "lucide-react";
+import { Share2, Globe, Rss, MapPin, Mail, Headset, Clock } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -20,9 +20,8 @@ export default function Footer() {
             </Link>
           </div>
           <p className="text-sm leading-relaxed mb-6">
-            The backbone of major infrastructure. Providing elite heavy
-            logistics, excavation, and road construction with half a century of
-            proven reliability.
+            Leading infrastructure development company since 2014, specializing
+            in road projects and construction across India.
           </p>
           <div className="flex gap-4">
             <a
@@ -58,7 +57,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="#" className="hover:text-primary transition-colors">
-                Fleet Rental
+                Project Managment
               </a>
             </li>
             <li>
@@ -68,7 +67,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="#" className="hover:text-primary transition-colors">
-                Operator Training
+                Quality Assurance
               </a>
             </li>
           </ul>
@@ -86,7 +85,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="#" className="hover:text-primary transition-colors">
-                Safety Protocols
+                Protocols
               </a>
             </li>
             <li>
@@ -96,7 +95,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="#" className="hover:text-primary transition-colors">
-                Yard Locations
+                Our Locations
               </a>
             </li>
           </ul>
@@ -110,23 +109,28 @@ export default function Footer() {
             <div className="flex items-start gap-3">
               <MapPin className="text-primary w-5 h-5 flex-shrink-0" />
               <span>
-                808 Industrial Way, Heavy Yard Zone B, Port Logistics Area
+                SCO - 105, Huda Market, Near HDFC Bank, Sector 10A, Gurugram,
+                Haryana, India 122001
               </span>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="text-primary w-5 h-5 flex-shrink-0" />
-              <span>ops@industrialcore.com</span>
+              <span>info@jeetasia.com</span>
             </div>
             <div className="flex items-center gap-3">
               <Headset className="text-primary w-5 h-5 flex-shrink-0" />
-              <span>Dispatch: +1 (555) 0123</span>
+              <span>+91 80538 05324, +91 124-4296574</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Clock className="text-primary w-5 h-5 flex-shrink-0" />
+              <span>Monday - Friday: 9:30 AM - 6:00 PM</span>
             </div>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 pt-10 border-t border-border-dark flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase font-bold tracking-widest">
-        <p>© 2024 IndustrialCore Heavy Transport. All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} Jeet Asia. All Rights Reserved.</p>
         <div className="flex gap-8">
           <a href="#" className="hover:text-white transition-colors">
             Privacy Policy

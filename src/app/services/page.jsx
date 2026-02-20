@@ -11,7 +11,6 @@ import {
   Clock,
 } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 
 export default function Services() {
   const services = [
