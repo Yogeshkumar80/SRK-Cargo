@@ -6,7 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Marquee } from "@/components/ui/marquee";
-import { HyperText } from "@/components/ui/hyper-text";
+import { NumberTicker } from "@/components/ui/number-ticker";
+const heroBgVideo = process.env.NEXT_PUBLIC_HOME_HERO_BG_VIDEO;
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="/bgvideo.mp4" type="video/mp4" />
+            <source src={heroBgVideo} type="video/mp4" />
           </video>
         </div>
 
@@ -57,13 +58,14 @@ export default function Home() {
                 of proven reliability.
               </p>
 
-              <div className="flex flex-col justify-center sm:flex-row gap-4">
+              <div className="inline-flex flex-col justify-center sm:flex-row gap-4">
                 <InteractiveHoverButton
                   className="
                         !bg-background-dark
                         !text-white
                         border-primary
                         text-sm
+                        px-7 py-3
                         font-black
                         uppercase
                         tracking-widest
@@ -114,13 +116,21 @@ export default function Home() {
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.4 }}
+                whileHover={{ scale: 1.03 }}
                 transition={{ delay: i * 0.1 }}
                 className="flex flex-col border-l-4 border-primary pl-6"
               >
-                <span className="text-4xl font-black text-white leading-none">
-                  <HyperText>{stat.value}</HyperText>
-                </span>
+                <div className="flex items-end">
+                  <NumberTicker
+                    value={stat.value}
+                    className="text-4xl font-bold text-white leading-none"
+                  />
+                  <span className="text-4xl font-bold text-white leading-none">
+                    +
+                  </span>
+                </div>
+
                 <span className="text-xs uppercase tracking-widest text-slate-500 font-bold mt-2">
                   {stat.label}
                 </span>
@@ -130,7 +140,13 @@ export default function Home() {
         </div>
       </section>
       {/* Services Section */}
-      <section className="py-24 bg-background-dark">
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+        className="py-24 bg-background-dark"
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
@@ -177,7 +193,7 @@ export default function Home() {
             ].map((service, i) => (
               <div
                 key={i}
-                className="group bg-surface-dark p-10 border border-border-dark relative overflow-hidden transition-all hover:bg-zinc-900"
+                className="group bg-surface-dark p-10 border border-border-dark relative transition-transform duration-300 ease-out hover:bg-zinc-900 hover:scale-105 hover:z-20 m-5"
               >
                 <h4 className="text-xl font-bold uppercase mb-4">
                   {service.title}
@@ -196,8 +212,14 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
-      <section className="bg-surface-dark border-b border-border-dark py-16">
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+        className="bg-surface-dark border-b border-border-dark py-16"
+      >
         <div className="max-w-7xl mx-auto px-6 text-center">
           {/* Section Header */}
           <div className="mb-12 text-center">
@@ -253,9 +275,15 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-dark border-b border-border-dark py-16 overflow-hidden">
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+        className="bg-dark border-b border-border-dark py-16 overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-12">
@@ -268,7 +296,7 @@ export default function Home() {
           </div>
 
           {/* Marquee */}
-          <Marquee pauseOnHover className="[--duration:40s]">
+          <Marquee pauseOnHover className="[--duration:40s] ">
             {[
               { name: "NHAI", logo: "/clients/nhai.jfif" },
               { name: "NHIDCL", logo: "/clients/nhidcl.jfif" },
@@ -292,10 +320,16 @@ export default function Home() {
             ))}
           </Marquee>
         </div>
-      </section>
+      </motion.section>
 
       {/* Advantage Section */}
-      <section className="py-24 bg-background-dark industrial-grid">
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+        className="py-24 bg-background-dark industrial-grid"
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
@@ -362,9 +396,15 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
       {/* CTA Section */}
-      <section className="bg-primary py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="bg-primary py-20"
+      >
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-background-dark text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-none">
             Ready to move the{" "}
@@ -390,7 +430,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }
