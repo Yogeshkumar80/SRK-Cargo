@@ -7,6 +7,8 @@ import Link from "next/link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { Marquee } from "@/components/ui/marquee";
 import { NumberTicker } from "@/components/ui/number-ticker";
+import { TypingAnimation } from "@/components/ui/typing-animation";
+
 const heroBgVideo = process.env.NEXT_PUBLIC_HOME_HERO_BG_VIDEO;
 
 export default function Home() {
@@ -193,7 +195,7 @@ export default function Home() {
             ].map((service, i) => (
               <div
                 key={i}
-                className="group bg-surface-dark p-10 border border-border-dark relative transition-transform duration-300 ease-out hover:bg-zinc-900 hover:scale-105 hover:z-20 m-5"
+                className="group bg-surface-dark p-10 border border-border-dark relative transition-transform duration-300 ease-out hover:bg-zinc-900 hover:scale-105 hover:z-20 m-3 rounded-lg"
               >
                 <h4 className="text-xl font-bold uppercase mb-4">
                   {service.title}
@@ -265,9 +267,9 @@ export default function Home() {
                   alt={partner.name}
                   width={140}
                   height={60}
-                  className="object-contain"
+                  className="object-contain rounded-lg p-4 bg-white"
                 />
-                <div className="uppercase text-lg font-bold mt-6">
+                <div className="uppercase text-lg font-bold mt-6 ">
                   {partner.name}
                 </div>
                 <div className=" text-sm mt-1">{partner.desc}</div>
@@ -312,6 +314,7 @@ export default function Home() {
                   alt={client.name}
                   width={140}
                   height={80}
+                  className="rounded-lg bg-white"
                 />
                 <div className="uppercase text-lg font-bold mt-5">
                   {client.name}
@@ -408,9 +411,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-background-dark text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-none">
             Ready to move the{" "}
-            <span className="bg-background-dark text-primary px-2">
-              Unmovable?
-            </span>
+            <TypingAnimation
+              words={["Unmovable?", "Unmatched?", "Unstoppable?"]}
+              loop
+              className="bg-background-dark text-primary px-2"
+            />
+            {/* Unmovable?
+            </TypingAnimation> */}
           </h2>
           <p className="text-background-dark/80 text-lg md:text-xl font-bold uppercase mb-10 max-w-2xl mx-auto">
             Partner with Industrial Experts. Join the group of clients that
@@ -421,12 +428,25 @@ export default function Home() {
               onClick={() =>
                 window.dispatchEvent(new CustomEvent("open-quote-modal"))
               }
-              className="bg-background-dark text-white px-10 py-5 font-black uppercase tracking-[0.2em] rounded hover:scale-105 transition-transform flex items-center justify-center gap-3"
+              className="relative overflow-hidden z-30 bg-background-primary text-black
+                        px-10 py-5
+                        font-black uppercase tracking-[0.2em]
+                        border-4 border-black
+                        rounded
+                        flex items-center justify-center gap-3
+                        transition-all duration-700 ease-out
+                        hover:bg-black hover:text-white
+                        hover:scale-105
+                        after:absolute after:-z-10
+                        after:h-1 after:w-1
+                        after:bg-background-dark
+                        after:left-1/2 after:bottom-0
+                        after:-translate-x-1/2 after:translate-y-full
+                        after:rounded-full
+                        after:transition-all after:duration-700
+                        hover:after:scale-[300]"
             >
               Partner With Us
-            </button>
-            <button className="border-4 border-background-dark text-background-dark px-10 py-5 font-black uppercase tracking-[0.2em] rounded hover:bg-background-dark hover:text-white transition-all flex items-center justify-center gap-3">
-              View Capability
             </button>
           </div>
         </div>

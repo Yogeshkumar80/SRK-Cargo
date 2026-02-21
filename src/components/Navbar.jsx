@@ -3,12 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Construction, PhoneCall, Menu, X } from "lucide-react";
+import { PhoneCall, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
 import QuoteModal from "./QuoteModal";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -116,7 +117,7 @@ export default function Navbar() {
             >
               REQUEST QUOTE
             </InteractiveHoverButton>
-
+            <AnimatedThemeToggler />
             {/* Mobile Toggle */}
             <button
               className="lg:hidden text-white"
