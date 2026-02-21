@@ -100,7 +100,7 @@ export default function Services() {
       </section>
 
       {/* Trust Strip */}
-      <section className="bg-surface-dark border-y border-white/5 py-12">
+      <section className="bg-background border-y border-white/5 py-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -116,7 +116,7 @@ export default function Services() {
               <div key={i} className="flex items-center gap-5 group">
                 <item.icon className="text-primary w-12 h-12 transition-transform group-hover:scale-110" />
                 <div>
-                  <p className="font-display text-2xl font-bold text-white">
+                  <p className="font-display text-2xl font-bold text-foreground">
                     {item.value}
                   </p>
                   <p className="text-xs uppercase tracking-widest text-slate-400 font-bold">
@@ -130,18 +130,18 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-background-dark relative">
+      <section className="py-24 bg-background relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl">
               <span className="text-primary font-bold tracking-[0.3em] uppercase text-sm block mb-4">
                 Core Capabilities
               </span>
-              <h2 className="font-display text-4xl lg:text-5xl font-black text-white leading-tight uppercase">
+              <h2 className="font-display text-4xl lg:text-5xl font-black text-foreground leading-tight uppercase">
                 Industrial Solutions
               </h2>
             </div>
-            <p className="text-slate-400 max-w-sm text-sm uppercase tracking-widest font-bold border-l-2 border-primary pl-6">
+            <p className="text-slate-500 max-w-sm text-sm uppercase tracking-widest font-bold border-l-2 border-primary pl-6">
               We maintain a diverse inventory of specialized machinery for any
               project scale.
             </p>
@@ -154,7 +154,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-surface-dark border border-white/5 rounded-sm p-1 transition-all duration-300 flex flex-col group hover:translate-y-[-8px] hover:border-b-4 hover:border-b-primary"
+                className="bg-background border border-border rounded-sm p-1 transition-all duration-300 flex flex-col group hover:translate-y-[-8px] hover:border-b-4 hover:border-b-primary"
               >
                 <div className="aspect-[4/3] overflow-hidden rounded-sm relative">
                   <img
@@ -167,7 +167,7 @@ export default function Services() {
                   </div>
                 </div>
                 <div className="p-8 flex flex-col flex-1">
-                  <h3 className="font-display text-2xl font-bold text-white mb-4">
+                  <h3 className="font-display text-2xl font-bold text-foreground mb-4">
                     {service.title}
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-1">

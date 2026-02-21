@@ -47,7 +47,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <h2 className="text-6xl md:text-5xl font-black uppercase leading-[0.9] tracking-tighter mb-8">
+              <h2 className="text-6xl md:text-5xl font-black uppercase leading-[0.9] tracking-tighter mb-8 text-white">
                 14 Years of{" "}
                 <span className="text-primary italic">Strength.</span>
                 <br />
@@ -63,8 +63,8 @@ export default function Home() {
               <div className="inline-flex flex-col justify-center sm:flex-row gap-4">
                 <InteractiveHoverButton
                   className="
-                        !bg-background-dark
-                        !text-white
+                        !bg-background
+                        !text-foreground
                         border-primary
                         text-sm
                         px-7 py-3
@@ -82,8 +82,8 @@ export default function Home() {
                 <Link href="/about">
                   <InteractiveHoverButton
                     className="
-                        !bg-background-dark
-                        !text-white
+                        !bg-background
+                        !text-foreground
                         border-primary
                         px-7 py-3
                         text-sm
@@ -106,7 +106,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-2 bg-primary"></div>
       </section>
       {/* Stats Strip */}
-      <section className="bg-surface-dark border-b border-border-dark py-12">
+      <section className="bg-card border-b border-border py-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -126,14 +126,14 @@ export default function Home() {
                 <div className="flex items-end">
                   <NumberTicker
                     value={stat.value}
-                    className="text-4xl font-bold text-white leading-none"
+                    className="text-4xl font-bold text-foreground leading-none"
                   />
-                  <span className="text-4xl font-bold text-white leading-none">
+                  <span className="text-4xl font-bold text-foreground leading-none">
                     +
                   </span>
                 </div>
 
-                <span className="text-xs uppercase tracking-widest text-slate-500 font-bold mt-2">
+                <span className="text-xs uppercase tracking-widest text-muted-foreground font-bold mt-2">
                   {stat.label}
                 </span>
               </motion.div>
@@ -147,7 +147,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
-        className="py-24 bg-background-dark"
+        className="py-24 bg-background"
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -155,11 +155,11 @@ export default function Home() {
               <h3 className="text-primary font-bold uppercase tracking-[0.3em] mb-4">
                 Core Capabilities
               </h3>
-              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
+              <h2 className="text-4xl text-foreground md:text-5xl font-black uppercase tracking-tighter">
                 Industrial Solutions
               </h2>
             </div>
-            <p className="max-w-md text-slate-500 font-medium leading-relaxed">
+            <p className="max-w-md text-muted-foreground font-medium leading-relaxed">
               We offer a comprehensive range of services tailored to meet your
               infrastructure needs — from planning and execution to logistics
               and heavy equipment support — ensuring quality, precision, and
@@ -195,9 +195,9 @@ export default function Home() {
             ].map((service, i) => (
               <div
                 key={i}
-                className="group bg-surface-dark p-10 border border-border-dark relative transition-transform duration-300 ease-out hover:bg-zinc-900 hover:scale-105 hover:z-20 m-3 rounded-lg"
+                className="group bg-card p-10 border border-border relative transition-transform duration-300 ease-out hover:bg-muted hover:scale-105 hover:z-20 m-3 rounded-lg"
               >
-                <h4 className="text-xl font-bold uppercase mb-4">
+                <h4 className="text-xl font-bold uppercase text-foreground mb-4">
                   {service.title}
                 </h4>
                 <p className="text-slate-400 text-sm leading-relaxed mb-6">
@@ -220,16 +220,16 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
-        className="bg-surface-dark border-b border-border-dark py-16"
+        className="bg-card border-b border-border py-16"
       >
         <div className="max-w-7xl mx-auto px-6 text-center">
           {/* Section Header */}
           <div className="mb-12 text-center">
-            <h3 className="text-2xl md:text-3xl font-black uppercase text-white">
+            <h3 className="text-2xl md:text-3xl font-black uppercase text-foreground">
               Our Financial Partners
             </h3>
 
-            <p className="text-slate-500 text-sm mt-3 max-w-xl mx-auto">
+            <p className="text-muted-foreground text-sm mt-3 max-w-xl mx-auto">
               Trusted banking and financial institutions supporting our
               large-scale infrastructure and logistics operations.
             </p>
@@ -267,12 +267,14 @@ export default function Home() {
                   alt={partner.name}
                   width={140}
                   height={60}
-                  className="object-contain rounded-lg p-4 bg-white"
+                  className="object-contain rounded-lg p-4 bg-card"
                 />
-                <div className="uppercase text-lg font-bold mt-6 ">
+                <div className="uppercase text-foreground text-lg font-bold mt-6 ">
                   {partner.name}
                 </div>
-                <div className=" text-sm mt-1">{partner.desc}</div>
+                <div className=" text-sm text-foreground mt-1">
+                  {partner.desc}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -284,15 +286,15 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
-        className="bg-dark border-b border-border-dark py-16 overflow-hidden"
+        className="bg-background border-b border-border py-16 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-black uppercase text-white">
+            <h3 className="text-3xl font-black uppercase text-foreground">
               Trusted By
             </h3>
-            <p className="text-slate-500 text-sm mt-3 max-w-xl mx-auto">
+            <p className="text-muted-foreground text-sm mt-3 max-w-xl mx-auto">
               Proudly partnered with leading infrastructure organizations.
             </p>
           </div>
@@ -314,9 +316,9 @@ export default function Home() {
                   alt={client.name}
                   width={140}
                   height={80}
-                  className="rounded-lg bg-white"
+                  className="rounded-lg bg-card"
                 />
-                <div className="uppercase text-lg font-bold mt-5">
+                <div className="uppercase text-lg text-foreground font-bold mt-5">
                   {client.name}
                 </div>
               </div>
@@ -331,7 +333,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
-        className="py-24 bg-background-dark industrial-grid"
+        className="py-24 bg-background industrial-grid"
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -339,7 +341,7 @@ export default function Home() {
               <h3 className="text-primary font-bold uppercase tracking-[0.3em] mb-4">
                 Building Excellence
               </h3>
-              <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tighter mb-10 leading-[1.1]">
+              <h2 className="text-5xl md:text-6xl font-black text-foreground uppercase tracking-tighter mb-10 leading-[1.1]">
                 Discover Our Journey of{" "}
                 <span className="italic text-slate-700">
                   Innovation and Growth
@@ -368,10 +370,10 @@ export default function Home() {
                       <item.icon className="text-background-dark font-bold w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold uppercase mb-2 tracking-tight">
+                      <h4 className="text-lg text-foreground font-bold uppercase mb-2 tracking-tight">
                         {item.title}
                       </h4>
-                      <p className="text-slate-500 text-sm leading-relaxed">
+                      <p className="text-muted-foreground text-sm leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -381,7 +383,7 @@ export default function Home() {
             </div>
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-primary/20 rounded-sm"></div>
-              <div className="relative bg-surface-dark border border-border-dark p-2">
+              <div className="relative bg-card border border-border p-2">
                 <img
                   className="w-full h-auto rounded-sm grayscale hover:grayscale-0 transition-all duration-700"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpasBF5hetjDwrREL_y7TgJmHrUYWGlRWccM_L-teKvF72Yo9C0wovlme8nj5ii4JeUfigF5AD68zZKtjY3NtN8CXnJzgf0soE_9xqVE-8iDfiB-Ku2LG-Whcyj0lZfx1K1vKBfpdls5N4f_9b0OMvtj-0aV49wK1XHtklw0KC70ubWu5VNibz7Cynf4W3lc_u2pou6hbR_Zfzn5kS-Nib4f7IkhthAp-H2cnavg1CqZ5dOKkjF1UKuNzO0c82q96wAMKdjWIrO8I"
@@ -414,7 +416,7 @@ export default function Home() {
             <TypingAnimation
               words={["Unmovable?", "Unmatched?", "Unstoppable?"]}
               loop
-              className="bg-background-dark text-primary px-2"
+              className="bg-black text-white px-2"
             />
             {/* Unmovable?
             </TypingAnimation> */}
@@ -428,23 +430,7 @@ export default function Home() {
               onClick={() =>
                 window.dispatchEvent(new CustomEvent("open-quote-modal"))
               }
-              className="relative overflow-hidden z-30 bg-background-primary text-black
-                        px-10 py-5
-                        font-black uppercase tracking-[0.2em]
-                        border-4 border-black
-                        rounded
-                        flex items-center justify-center gap-3
-                        transition-all duration-700 ease-out
-                        hover:bg-black hover:text-white
-                        hover:scale-105
-                        after:absolute after:-z-10
-                        after:h-1 after:w-1
-                        after:bg-background-dark
-                        after:left-1/2 after:bottom-0
-                        after:-translate-x-1/2 after:translate-y-full
-                        after:rounded-full
-                        after:transition-all after:duration-700
-                        hover:after:scale-[300]"
+              className="relative overflow-hidden z-30 bg-primary text-black text-black px-10 py-5 font-black uppercase tracking-[0.2em] border-4 border-black rounded flex items-center justify-center gap-3 transition-all duration-700 ease-out hover:bg-black hover:text-white hover:scale-105 after:absolute after:-z-10 after:h-1 after:w-1 after:bg-black after:left-1/2 after:bottom-0 after:-translate-x-1/2 after:translate-y-full after:rounded-full after:transition-all after:duration-700 hover:after:scale-[300]"
             >
               Partner With Us
             </button>

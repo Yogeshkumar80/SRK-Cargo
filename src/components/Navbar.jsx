@@ -9,6 +9,7 @@ import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
 import QuoteModal from "./QuoteModal";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -54,8 +55,8 @@ export default function Navbar() {
         className={cn(
           "sticky top-0 z-50 w-full border-b transition-all duration-300",
           isScrolled
-            ? "bg-background-dark/95 border-border-dark backdrop-blur-md py-3"
-            : "bg-background-dark border-transparent py-5",
+            ? "bg-background/95 border-border backdrop-blur-md py-3"
+            : "bg-background border-transparent py-5",
         )}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -79,7 +80,9 @@ export default function Navbar() {
                 href={link.path}
                 className={cn(
                   "text-sm font-bold uppercase tracking-wider transition-colors hover:text-primary",
-                  pathname === link.path ? "text-primary" : "text-slate-400",
+                  pathname === link.path
+                    ? "text-primary"
+                    : "text-muted-foreground",
                 )}
               >
                 {link.name}
@@ -90,7 +93,7 @@ export default function Navbar() {
           {/* Right Section */}
           <div className="flex items-center gap-4">
             {/* Call Now */}
-            <button className="hidden sm:flex items-center gap-2 text-sm font-bold uppercase border border-border-dark px-5 py-2.5 rounded-sm transition-all duration-300 text-white hover:bg-primary hover:text-black">
+            <button className="hidden sm:flex items-center gap-2 text-sm font-bold uppercase border border-border px-5 py-2.5 rounded-sm transition-all duration-300 text-foreground hover:bg-primary hover:text-primary-foreground">
               <PhoneCall className="w-4 h-4" />
               Call Now
             </button>
@@ -99,27 +102,27 @@ export default function Navbar() {
             <InteractiveHoverButton
               onClick={() => setIsQuoteModalOpen(true)}
               className="
-                !bg-primary
-                !text-black
-                border
-                border-border-dark
-                text-sm
-                font-black
-                rounded-sm
-                uppercase
-                tracking-widest
-                transition-all
-                duration-300
-                [&_*]:hover:!bg-background-dark
-                hover:!text-black
-              "
+            !bg-primary
+            !text-primary-foreground
+            border
+            border-border
+            text-sm
+            font-black
+            rounded-sm
+            uppercase
+            tracking-widest
+            transition-all
+            duration-300
+          "
             >
               REQUEST QUOTE
             </InteractiveHoverButton>
 
+            <AnimatedThemeToggler className="text-foreground" />
+
             {/* Mobile Toggle */}
             <button
-              className="lg:hidden text-white"
+              className="lg:hidden text-foreground"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X /> : <Menu />}
@@ -129,7 +132,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-background-dark border-b border-border-dark p-6 flex flex-col gap-6 animate-in slide-in-from-top duration-300">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-background border-b border-border p-6 flex flex-col gap-6 animate-in slide-in-from-top duration-300">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -137,14 +140,16 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={cn(
                   "text-lg font-bold uppercase tracking-wider transition-colors",
-                  pathname === link.path ? "text-primary" : "text-slate-400",
+                  pathname === link.path
+                    ? "text-primary"
+                    : "text-muted-foreground",
                 )}
               >
                 {link.name}
               </Link>
             ))}
 
-            <button className="flex items-center justify-center gap-2 text-sm font-bold uppercase border border-border-dark px-5 py-4 rounded-sm text-white hover:bg-surface-dark transition-all">
+            <button className="flex items-center justify-center gap-2 text-sm font-bold uppercase border border-border px-5 py-4 rounded-sm text-foreground hover:bg-muted transition-all">
               <PhoneCall className="w-4 h-4" />
               Call Now
             </button>

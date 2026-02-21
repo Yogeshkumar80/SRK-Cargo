@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[450px] w-full overflow-hidden bg-neutral-900">
+      <section className="relative h-[450px] w-full overflow-hidden bg-background-dark">
         <img
           src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600"
           className="w-full h-full object-cover opacity-50"
@@ -26,11 +26,11 @@ export default function Contact() {
       </section>
 
       {/* Contact Info + Form */}
-      <section className="py-24 bg-background-dark">
+      <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Info Section */}
           <div>
-            <h2 className="text-3xl font-black uppercase italic mb-10 border-l-4 border-primary pl-4 text-white">
+            <h2 className="text-3xl font-black uppercase italic mb-10 border-l-4 border-primary pl-4 text-foreground">
               Get In Touch
             </h2>
 
@@ -40,7 +40,7 @@ export default function Contact() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white uppercase italic">
+                  <h4 className="font-bold text-foreground uppercase italic">
                     Head Office
                   </h4>
                   <p className="text-slate-400 text-sm mt-1">
@@ -55,7 +55,7 @@ export default function Contact() {
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white uppercase italic">
+                  <h4 className="font-bold text-foreground uppercase italic">
                     Call Us
                   </h4>
                   <p className="text-slate-400 text-sm mt-1">
@@ -69,7 +69,7 @@ export default function Contact() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white uppercase italic">
+                  <h4 className="font-bold text-foreground uppercase italic">
                     Email Address
                   </h4>
                   <p className="text-slate-400 text-sm mt-1">
@@ -83,7 +83,7 @@ export default function Contact() {
                   <Clock className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white uppercase italic">
+                  <h4 className="font-bold text-foreground uppercase italic">
                     Working Hours
                   </h4>
                   <p className="text-slate-400 text-sm mt-1">
@@ -95,8 +95,8 @@ export default function Contact() {
           </div>
 
           {/* Right Contact Form */}
-          <div className="bg-neutral-800 border border-neutral-700 p-10 rounded">
-            <h3 className="text-2xl font-black uppercase italic text-white mb-8">
+          <div className="bg-background border border-neutral-700 p-10 rounded">
+            <h3 className="text-2xl font-black uppercase italic text-foreground mb-8">
               Send a Message
             </h3>
 
@@ -107,7 +107,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
-                  className="w-full mt-2 bg-neutral-900 border border-neutral-700 p-3 text-white rounded focus:border-primary outline-none"
+                  className="w-full mt-2 bg-background border border-neutral-700 p-3 text-foreground rounded focus:border-primary outline-none"
                 />
               </div>
 
@@ -117,7 +117,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="email"
-                  className="w-full mt-2 bg-neutral-900 border border-neutral-700 p-3 text-white rounded focus:border-primary outline-none"
+                  className="w-full mt-2 bg-background border border-neutral-700 p-3 text-foreground rounded focus:border-primary outline-none"
                 />
               </div>
 
@@ -127,7 +127,7 @@ export default function Contact() {
                 </label>
                 <textarea
                   rows="5"
-                  className="w-full mt-2 bg-neutral-900 border border-neutral-700 p-3 text-white rounded focus:border-primary outline-none"
+                  className="w-full mt-2 bg-background border border-neutral-700 p-3 text-foreground rounded focus:border-primary outline-none"
                 />
               </div>
 

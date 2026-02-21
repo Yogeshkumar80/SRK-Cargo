@@ -41,7 +41,7 @@ export default function About() {
               <h2 className="text-primary text-sm font-black uppercase tracking-[0.3em] mb-2">
                 Our Legacy
               </h2>
-              <h3 className="text-4xl md:text-5xl font-black uppercase text-white">
+              <h3 className="text-4xl text-foreground md:text-5xl font-black uppercase">
                 A 14-Year Journey
               </h3>
             </div>
@@ -87,7 +87,7 @@ export default function About() {
                 <span className="block text-primary font-black text-2xl mb-2">
                   {item.year}
                 </span>
-                <h4 className="text-xl font-bold uppercase mb-2 text-white">
+                <h4 className="text-xl font-bold uppercase mb-2 text-foreground">
                   {item.title}
                 </h4>
                 <p className="text-slate-400 max-w-md mx-auto md:mx-0">
@@ -100,16 +100,16 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 bg-surface-dark border-y-4 border-primary/20">
+      <section className="py-24 bg-card border-y-4 border-primary/20">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16">
           <div className="space-y-6">
             <div className="size-16 bg-primary/10 flex items-center justify-center rounded">
               <Rocket className="text-primary w-10 h-10" />
             </div>
-            <h3 className="text-3xl font-black uppercase tracking-tight text-white">
+            <h3 className="text-3xl font-black uppercase tracking-tight text-foreground">
               Our Mission
             </h3>
-            <p className="text-2xl font-light text-slate-300 leading-relaxed italic">
+            <p className="text-2xl font-light text-slate-500 leading-relaxed italic ">
               "To deliver high-quality infrastructure solutions that create
               value for our clients, communities, and stakeholders while
               maintaining environmental responsibility."
@@ -119,10 +119,10 @@ export default function About() {
             <div className="size-16 bg-primary/10 flex items-center justify-center rounded">
               <Eye className="text-primary w-10 h-10" />
             </div>
-            <h3 className="text-3xl font-black uppercase tracking-tight text-white">
+            <h3 className="text-3xl font-black uppercase tracking-tight text-foreground">
               Our Vision
             </h3>
-            <p className="text-2xl font-light text-slate-300 leading-relaxed italic">
+            <p className="text-2xl font-light text-slate-500 leading-relaxed italic">
               "To be the leading infrastructure development company in India,
               known for excellence, innovation, and sustainable growth."
             </p>
@@ -152,10 +152,10 @@ export default function About() {
               <h2 className="text-primary text-sm font-black uppercase tracking-[0.3em] mb-2">
                 Director
               </h2>
-              <h3 className="text-4xl font-black uppercase mb-6 text-white">
+              <h3 className="text-4xl font-black uppercase mb-6 text-foreground">
                 Mr. Ramphal
               </h3>
-              <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+              <p className="text-slate-500 text-lg mb-8 leading-relaxed">
                 "Mr. Ramphal brings technical expertise and strategic vision to
                 the company, overseeing project execution and quality standards
                 across all our infrastructure developments."
@@ -169,10 +169,10 @@ export default function About() {
               <h2 className="text-primary text-sm font-black uppercase tracking-[0.3em] mb-2">
                 Managing Director
               </h2>
-              <h3 className="text-4xl font-black uppercase mb-6 text-white">
+              <h3 className="text-4xl font-black uppercase mb-6 text-foreground">
                 Mr. Krishan Singh
               </h3>
-              <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+              <p className="text-slate-500 text-lg mb-8 leading-relaxed">
                 "With over 15 years of experience in the infrastructure sector,
                 Mr. Singh has been instrumental in the growth and expansion of
                 JEET Asia Private Limited."

@@ -1,10 +1,11 @@
-const {heroui} = require('@heroui/theme');
+const { heroui } = require("@heroui/theme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./src/app/**/*.{js,jsx}",
     "./src/components/**/*.{js,jsx}",
-    "./node_modules/@heroui/theme/dist/components/(card|ripple).js"
+    "./node_modules/@heroui/theme/dist/components/(card|ripple).js",
   ],
   theme: {
     extend: {

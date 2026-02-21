@@ -60,7 +60,7 @@ export default function Projects() {
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 border-b border-neutral-800 bg-background-dark">
+      <section className="py-12 border-b border-neutral-800 bg-background">
         <div className="max-w-7xl mx-auto px-6 flex gap-4 flex-wrap">
           {["all", "completed", "ongoing"].map((filter) => (
             <button
@@ -79,13 +79,13 @@ export default function Projects() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-24 bg-background-dark">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-6 ">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {filteredProjects.map((project, i) => (
               <div
                 key={i}
-                className="group bg-neutral-800 border border-neutral-700 rounded overflow-hidden hover:border-primary transition-colors"
+                className="group border border-neutral-700 rounded overflow-hidden hover:border-primary transition-colors"
               >
                 <div className="aspect-video overflow-hidden">
                   <img
@@ -106,7 +106,7 @@ export default function Projects() {
                     {project.status}
                   </span>
 
-                  <h3 className="text-white font-bold uppercase italic mt-4">
+                  <h3 className="text-foreground font-bold uppercase italic mt-4">
                     {project.title}
                   </h3>
 

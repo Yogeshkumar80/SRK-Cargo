@@ -76,16 +76,18 @@ export default function Fleet() {
       </section>
 
       {/* Fleet Stats */}
-      <section className="py-20 bg-background-dark border-b border-neutral-800">
+      <section className="py-20 bg-background border-b border-neutral-800">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {fleetStats.map((item, i) => (
             <div
               key={i}
-              className="p-6 bg-neutral-800 border border-neutral-700 rounded"
+              className="p-6 bg-backgrond border border-neutral-700 rounded"
             >
               <item.icon className="w-10 h-10 text-primary mx-auto mb-4" />
-              <h3 className="text-3xl font-black text-white">{item.count}</h3>
-              <p className="text-slate-400 text-sm uppercase tracking-widest mt-2">
+              <h3 className="text-3xl font-black text-foreground">
+                {item.count}
+              </h3>
+              <p className="text-slate-500 text-sm uppercase tracking-widest mt-2">
                 {item.title}
               </p>
             </div>
@@ -94,13 +96,13 @@ export default function Fleet() {
       </section>
 
       {/* Vehicles Grid */}
-      <section className="py-24 bg-background-dark">
+      <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {vehicles.map((vehicle, i) => (
               <div
                 key={i}
-                className="group bg-neutral-800 border border-neutral-700 rounded overflow-hidden hover:border-primary transition-colors"
+                className="group bg-background border border-neutral-700 rounded overflow-hidden hover:border-primary transition-colors"
               >
                 <div className="aspect-video overflow-hidden">
                   <img
@@ -110,10 +112,10 @@ export default function Fleet() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-white font-bold uppercase italic">
+                  <h3 className="text-foreground font-bold uppercase italic">
                     {vehicle.name}
                   </h3>
-                  <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+                  <p className="text-slate-500 text-sm mt-3 leading-relaxed">
                     {vehicle.desc}
                   </p>
                 </div>
@@ -127,7 +129,7 @@ export default function Fleet() {
       <section className="py-20 border-t border-neutral-800">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <ShieldCheck className="w-12 h-12 text-primary mx-auto mb-6" />
-          <h2 className="text-3xl font-black uppercase italic text-white mb-4">
+          <h2 className="text-3xl font-black uppercase italic text-primary mb-4">
             Safety & Maintenance Commitment
           </h2>
           <p className="text-slate-400 leading-relaxed">
